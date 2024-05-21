@@ -29,7 +29,7 @@ async function getLoggedUser(){
       const json = await response.json();
       console.log(json);
 
-      // FULL NAME
+      // FULL NAME (firstname + lastname)
       // Using getElementsByClassName instead of getElementById
       const userLoggedNameElements = document.getElementsByClassName("user_logged_name");
 
@@ -37,6 +37,16 @@ async function getLoggedUser(){
       for (let i = 0; i < userLoggedNameElements.length; i++) {
           userLoggedNameElements[i].innerHTML = json.firstname + " " + json.lastname;
       }
+      
+      // FULL NAME
+      // Using getElementById instead of getElementsByClassName
+      const userLoggedName1Element = document.getElementById("user_name");
+
+      // Check if the element exists before updating its content
+      if (userLoggedName1Element) {
+          userLoggedName1Element.innerHTML = json.name;
+      }
+
 
       // Display user's image
       const imagePath = backendURL + "/storage/" + json.image;
@@ -87,6 +97,14 @@ async function getLoggedUser(){
         const element = userLoggedEmailElements[i];
         element.innerHTML = element.value = json.email;
       }
+
+      // EMAIL (using ID selector)
+      const userLoggedEmailElement = document.getElementById("user_logged_email");
+
+      if (userLoggedEmailElement) {
+        userLoggedEmailElement.innerHTML = userLoggedEmailElement.value = json.email;
+      }
+
 
       // USER ID
       // Sets value to the input field with id "user_id"

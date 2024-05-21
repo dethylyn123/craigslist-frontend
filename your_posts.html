@@ -15,6 +15,11 @@
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
+
+  <script type="module" src="assets/js/auth/dashboard.js"></script>
+  <script type="module" src="assets/js/dashboard/post-index.js"></script>
+  <script type="module" src="assets/js/utils/utils.js"></script>
+
 </head>
 
 <body>
@@ -84,6 +89,14 @@
           <span style="font-size: 18px;">Your Posts</span>
         </a>
       </li>
+      <p style="margin-top: 350px;">
+        
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#">
+            <i class="bi bi-box-arrow-left"></i>
+            <span id="btn_logout" style="font-size: 18px;">Sign Out</span>
+          </a>
+        </li>
     </ul>
   </aside>  
 
@@ -101,8 +114,10 @@
 
     <div class="container-fluid mt-5 mb-5" style="border-radius: 25px; width: 100%;">
       <div class="row">
+
         <!-- Example of a single post -->
-        <div class="col-sm-4">
+
+        <!-- <div class="col-sm-4">
           <div class="card" style="border-radius: 50px;">
             <img src="assets/img/example.jpg" class="card-img-top" alt="...">
             <div class="card-body">
@@ -110,21 +125,29 @@
               <p class="card-text">Post content goes here...</p>
             </div>
           </div>
-        </div>
+        </div> -->
+
         <!-- Add more posts here -->
+
+        <!-- Notifications -->
+      <div class="alert alert-success d-none" role="alert"></div>
+      <div class="alert alert-danger d-none" role="alert"></div>
+
+      <!-- Get All Data -->
+      <div class="row pb-5" id="get_data">
+      <div
+          class="col-sm-12 d-flex justify-content-center align-items-center"
+      >
+          <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+          </div>
+          <b class="ms-2">Loading Data...</b>
+
       </div>
     </div>
   </main>
 
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+ 
   <br>
   <br>
   <br>

@@ -25,6 +25,10 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <script type="module" src="assets/js/utils/utils.js"></script>
+  <script type="module" src="assets/js/auth/dashboard.js"></script>
+  <script type="module" src="assets/js/dashboard/post.js"></script>
+
 </head>
 
 <body>
@@ -103,6 +107,14 @@
             <span style="font-size: 18px;">Your Posts</span>
           </a>
         </li>
+        <p style="margin-top: 350px;">
+        
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#">
+            <i class="bi bi-box-arrow-left"></i>
+            <span id="btn_logout" style="font-size: 18px;">Sign Out</span>
+          </a>
+        </li>
       </ul>
     </aside> 
 
@@ -160,17 +172,17 @@
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label ">Full Name</div>
-                    <div class="col-lg-9 col-md-8"><?php echo $userFullName; ?></div>
+                    <div id="user_name" class="col-lg-9 col-md-8"></div>
                   </div>
 
-                  <div class="row">
+                  <!-- <div class="row">
                     <div class="col-lg-3 col-md-4 label">Country</div>
                     <div class="col-lg-9 col-md-8"><?php echo $userCountry; ?></div>
-                  </div>
+                  </div> -->
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Email</div>
-                    <div class="col-lg-9 col-md-8"><?php echo $userEmail; ?></div>
+                    <div id="user_logged_email" class="col-lg-9 col-md-8"></div>
                   </div>
 
                 </div>

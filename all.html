@@ -25,7 +25,9 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <script type="module" src="assets/js/auth/dashboard.js"></script>
   <script type="module" src="assets/js/dashboard/post-all.js"></script>
+  <script type="module" src="assets/js/utils/utils.js"></script>
 
 </head>
 
@@ -109,6 +111,14 @@
           <span style="font-size: 18px;">Your Posts</span>
         </a>
       </li>
+      <p style="margin-top: 350px;">
+        
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#">
+            <i class="bi bi-box-arrow-left"></i>
+            <span id="btn_logout" style="font-size: 18px;">Sign Out</span>
+          </a>
+        </li>
     </ul>
   </aside> 
 
@@ -139,14 +149,13 @@
         <span class="visually-hidden">Loading...</span>
         </div>
         <b class="ms-2">Loading Data...</b>
-    </div>
-    </div>
+    
+    
       <!-- First Post -->
       <!-- <div class="container-fluid mt-5 mb-5" style="border-radius: 25px; width: 100%;">
           <div class="row d-flex align-items-center justify-content-center" style="border-radius: 25px;">
-              <div class="col-md-8">  -->
-                <!-- Adjusted width to col-md-8 -->
-                  <!-- <div class="card" style="border-radius: 25px;">
+              <div class="col-md-8"> 
+                  <div class="card" style="border-radius: 25px;">
                       <div class="d-flex justify-content-between p-2 px-3">
                           <div class="d-flex flex-row align-items-center">
                               <img src="assets/img/news-1.jpg" width="50" class="rounded-circle">
@@ -165,9 +174,8 @@
                           <form name="frm1" method="post">
                               <input type="hidden" id="commentid" name="Rcommentid">
                               <div class="form-group" style="margin-bottom: 20px;">
-                                  <label for="comment">Write your comment:</label> -->
-                                  <!-- Adjust the rows attribute to control the height -->
-                                  <!-- <textarea class="form-control" rows="1" name="Rmsg" required style="width: 100%; border-radius: 25px;"></textarea>
+                                  <label for="comment">Write your comment:</label>
+                                  <textarea class="form-control" rows="1" name="Rmsg" required style="width: 100%; border-radius: 25px;"></textarea>
                               </div>
                               <div class="form-group" style="text-align: right;">
                                   <input type="button" id="btncomment" name="btncomment" class="btn btn-primary" value="Comment" style="background-color: #BE79EF; color: #fff; border: none; border-radius: 25px; padding: 10px 20px; cursor: pointer;">
@@ -179,79 +187,6 @@
           </div>
       </div> -->
 
-      <!-- <div class="container-fluid mt-5 mb-5" style="border-radius: 25px; width: 100%;">
-        <div class="row d-flex align-items-center justify-content-center" style="border-radius: 25px;">
-            <div class="col-md-8">  -->
-                <!-- Adjusted width to col-md-8 -->
-                <!-- <div class="card" style="border-radius: 25px;">
-                    <div class="d-flex justify-content-between p-2 px-3">
-                        <div class="d-flex flex-row align-items-center">
-                            <img src="assets/img/messages-1.jpg" width="50" class="rounded-circle">
-                            <div class="d-flex flex-column ml-2">
-                                <span class="font-weight-bold"><b></b>Kimberly Anthony</span>
-                            </div>
-                        </div>
-                        <div class="d-flex flex-row mt-1 ellipsis">
-                            <small class="mr-2">20 mins</small>
-                            <i class="fa fa-ellipsis-h"></i>
-                        </div>
-                    </div>
-                    <div class="p-2">
-                        <p class="text-justify">Have you ever encountered fake news or misinformation on social media?</p>
-                        <hr>
-                        <form name="frm1" method="post">
-                            <input type="hidden" id="commentid" name="Rcommentid">
-                            <div class="form-group" style="margin-bottom: 20px;">
-                                <label for="comment">Write your comment:</label> -->
-                                <!-- Adjust the rows attribute to control the height -->
-                                <!-- <textarea class="form-control" rows="1" name="Rmsg" required style="width: 100%; border-radius: 25px;"></textarea>
-                            </div>
-                            <div class="form-group" style="text-align: right;">
-                                <input type="button" id="btncomment" name="btncomment" class="btn btn-primary" value="Comment" style="background-color: #BE79EF; color: #fff; border: none; border-radius: 25px; padding: 10px 20px; cursor: pointer;">
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-    <!-- <div class="container-fluid mt-5 mb-5" style="border-radius: 25px; width: 100%;">
-      <div class="row d-flex align-items-center justify-content-center" style="border-radius: 25px;">
-          <div class="col-md-8">  -->
-            <!-- Adjusted width to col-md-8 -->
-              <!-- <div class="card" style="border-radius: 25px;">
-                  <div class="d-flex justify-content-between p-2 px-3">
-                      <div class="d-flex flex-row align-items-center">
-                          <img src="assets/img/news-2.jpg" width="50" class="rounded-circle">
-                          <div class="d-flex flex-column ml-2">
-                              <span class="font-weight-bold"><b></b>Chin Rich</span>
-                          </div>
-                      </div>
-                      <div class="d-flex flex-row mt-1 ellipsis">
-                          <small class="mr-2">20 mins</small>
-                          <i class="fa fa-ellipsis-h"></i>
-                      </div>
-                  </div>
-                  <div class="p-2">
-                      <p class="text-justify">In what ways might AI transform the future of work, and how can society prepare for these changes?</p>
-                      <hr>
-                      <form name="frm1" method="post">
-                          <input type="hidden" id="commentid" name="Rcommentid">
-                          <div class="form-group" style="margin-bottom: 20px;">
-                              <label for="comment">Write your comment:</label> -->
-                              <!-- Adjust the rows attribute to control the height -->
-                              <!-- <textarea class="form-control" rows="1" name="Rmsg" required style="width: 100%; border-radius: 25px;"></textarea>
-                          </div>
-                          <div class="form-group" style="text-align: right;">
-                              <input type="button" id="btncomment" name="btncomment" class="btn btn-primary" value="Comment" style="background-color: #BE79EF; color: #fff; border: none; border-radius: 25px; padding: 10px 20px; cursor: pointer;">
-                          </div>
-                      </form>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div> -->
 
   </body>
   

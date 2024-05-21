@@ -4,15 +4,15 @@ import { backendURL, successNotification, errorNotification, getLoggedUser } fro
 getLoggedUser();
 
 document.addEventListener('DOMContentLoaded', () => {
-  const form_posts = document.querySelector('form[name="form_posts"]');
+  const form_posts = document.getElementById('form_posts');
 
   // Check if form_posts exists to avoid errors
   if (form_posts) {
     form_posts.onsubmit = async (e) => {
       e.preventDefault();
 
-      // Disable button
-      const submitButton = document.querySelector('form[name="form_posts"] input[type="submit"]');
+      // Disable button and show spinner
+      const submitButton = form_posts.querySelector('input[type="submit"]');
       submitButton.disabled = true;
       submitButton.innerHTML = 
         `<div class="col-sm-12 d-flex justify-content-center align-items-center">

@@ -1,4 +1,4 @@
-import { backendURL, showNavAdminPages, getLoggedUser } from "../utils/utils.js";
+import { backendURL, getLoggedUser } from "../utils/utils.js";
 
 // Get Logged User Info
 getLoggedUser();
@@ -38,10 +38,10 @@ async function getData() {
     const json = await response.json();
     console.log(json);
 
-    // Check if json.data is an array and has length greater than 0
-    if (Array.isArray(json.data) && json.data.length > 0) {
+    // Check if json is an array and has length greater than 0
+    if (Array.isArray(json) && json.length > 0) {
       let container = "";
-      json.data.forEach((element) => {
+      json.forEach((element) => {
         const date = new Date(element.created_at).toLocaleString();
         const imageUrl = element.image ? `${backendURL}/storage/${element.image}` : '';
 
@@ -52,23 +52,46 @@ async function getData() {
                   <div class="card">
                       <div class="row g-0">
                           <div class="col-sm-5 d-flex align-items-center">`;
-        
-        if(imageUrl !== '') {
-          container += `<img class="rounded" src="${imageUrl}" width="100%" height="270px">`;
-        }
 
         container += `</div>
-                          <div class="col-sm-7">
-                              <div class="card-body">
-                                  <div class="pt-4">
-                                      <h6 class="card-text"><b>Title:</b> ${element.title}</h6>
-                                      <h6 class="card-text"><b>Content:</b> ${element.content}</h6>
-                                  </div>
-                                  <h6 class="card-subtitle text-body-secondary mt-5 pt-5">
-                                      <small>${date}</small>
-                                  </h6>
+                          <div class="col-sm-7"> 
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      
+      <div class="container-fluid" style="border-radius: 25px; width: 100%;">
+          <div class="row d-flex align-items-center justify-content-center" style="border-radius: 25px;">
+              <div class="col-md-8"> 
+                  <div class="card" style="border-radius: 25px;">
+                      <div class="d-flex justify-content-between p-2 px-3">
+                          <div class="d-flex flex-row align-items-center">
+                              <img src="assets/img/news-1.jpg" width="50" class="rounded-circle">
+                              <div class="d-flex flex-column ml-2">
+                                  <span class="font-weight-bold"><b>&nbsp; ${element.user.name}</b></span>
                               </div>
                           </div>
+                          <div class="d-flex flex-row mt-1 ellipsis">
+                              <small class="mr-2">${date}</small>
+                              <i class="fa fa-ellipsis-h"></i>
+                          </div>
+                      </div>
+                      <div class="p-2">
+                          <h3><b>${element.title}</b></h3>
+                          <p class="text-justify">${element.content}</p>
+                          <img class="rounded" src="${imageUrl}" width="100%" height="400px">
+                          <hr>
+                          <form name="frm1" method="post">
+                              <input type="hidden" id="commentid" name="Rcommentid">
+                              <div class="form-group" style="margin-bottom: 20px;">
+                                  <label for="comment">Write your comment:</label>
+                                  <textarea class="form-control" rows="1" name="Rmsg" required style="width: 100%; border-radius: 25px;"></textarea>
+                              </div>
+                              <div class="form-group" style="text-align: right;">
+                                  <input type="button" id="btncomment" name="btncomment" class="btn btn-primary" value="Comment" style="background-color: #BE79EF; color: #fff; border: none; border-radius: 25px; padding: 10px 20px; cursor: pointer;">
+                              </div>
+                          </form>
                       </div>
                   </div>
               </div>
